@@ -1,0 +1,54 @@
+{
+  "name": "example-webpack-react",
+  "version": "0.1.0",
+  "description": "A Webpack project example using React",
+  "main": "src/index.jsx",
+  "scripts": {
+    "start": "webpack serve -c webpack.dev.js",
+    "build": "webpack -c webpack.prod.js",
+    "test": "jest",
+    "lint": "eslint --fix .",
+    "format": "prettier --write .",
+    "prepare": "husky install"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/craigmorrison/example-webpack-react.git"
+  },
+  "author": "Craig Morrison <hello@craigmorrison.co.uk>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/craigmorrison/example-webpack-react/issues"
+  },
+  "homepage": "https://github.com/craigmorrison/example-webpack-react#readme",
+  "prettier": {
+    "singleQuote": true,
+    "trailingComma": "none",
+    "quoteProps": "as-needed"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.15.0",
+    "@babel/preset-env": "^7.15.0",
+    "@babel/preset-react": "^7.14.5",
+    "@craigmorrison/eslint-config": "^0.12.0",
+    "@testing-library/react": "^12.0.0",
+    "@testing-library/user-event": "^13.2.1",
+    "babel-jest": "^27.0.6",
+    "babel-loader": "^8.2.2",
+    "eslint": "^7.32.0",
+    "html-webpack-plugin": "^5.3.2",
+    "husky": "^7.0.1",
+    "jest": "^27.0.6",
+    "lint-staged": "^11.1.2",
+    "prettier": "^2.3.2",
+    "react": "^17.0.2",
+    "react-dom": "^17.0.2",
+    "webpack": "^5.51.1",
+    "webpack-cli": "^4.8.0",
+    "webpack-dev-server": "^4.0.0"
+  },
+  "lint-staged": {
+    "*.js": "eslint --cache --fix",
+    "*.{js,css,md}": "prettier --write"
+  }
+}

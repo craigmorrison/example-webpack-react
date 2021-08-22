@@ -1,0 +1,7 @@
+{
+  "extends": [
+    "@craigmorrison",
+    "@craigmorrison/eslint-config/react",
+    "@craigmorrison/eslint-config/jest"
+  ]
+}
