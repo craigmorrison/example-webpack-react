@@ -1,7 +1,17 @@
+/* eslint-disable camelcase */
 import { ReactElement } from 'react';
 import { useQuery } from 'react-query';
+import {
+  sectionHeading,
+  peopleHeading,
+  peopleItem,
+  peopleList,
+  definitionList,
+  defintionListItem,
+  defintionListKey,
+  defintionListValue
+} from './people-list.css';
 
-/* eslint-disable camelcase */
 type swPerson = {
   name: string;
   height: string;
@@ -20,7 +30,6 @@ type swPerson = {
   edited: string;
   url: string;
 };
-/* eslint-enable camelcase */
 
 type swPersonList = {
   count: number;
@@ -45,24 +54,35 @@ function PeopleList(): ReactElement {
 
   return (
     <>
-      <h2>People</h2>
-      <ul>
-        {data &&
-          data.results.map((person) => (
-            <li key={person.name}>
-              <h3>{person.name}</h3>
-              <dl>
-                <div>
-                  <dt>Height</dt>
-                  <dl>{person.height}</dl>
-                </div>
-                <div>
-                  <dt>Mass</dt>
-                  <dl>{person.mass}</dl>
-                </div>
-              </dl>
-            </li>
-          ))}
+      <h2 className={sectionHeading}>People</h2>
+      <ul className={peopleList}>
+        {data?.results.map((person) => (
+          <li key={person.name} className={peopleItem}>
+            <h3 className={peopleHeading}>{person.name}</h3>
+            <dl className={definitionList}>
+              <div className={defintionListItem}>
+                <dt className={defintionListKey}>Height:</dt>
+                <dl className={defintionListValue}>{person.height}</dl>
+              </div>
+              <div className={defintionListItem}>
+                <dt className={defintionListKey}>Mass:</dt>
+                <dl className={defintionListValue}>{person.mass}</dl>
+              </div>
+              <div className={defintionListItem}>
+                <dt className={defintionListKey}>Hair color:</dt>
+                <dl className={defintionListValue}>{person.hair_color}</dl>
+              </div>
+              <div className={defintionListItem}>
+                <dt className={defintionListKey}>Eye color:</dt>
+                <dl className={defintionListValue}>{person.eye_color}</dl>
+              </div>
+              <div className={defintionListItem}>
+                <dt className={defintionListKey}>Skin color:</dt>
+                <dl className={defintionListValue}>{person.skin_color}</dl>
+              </div>
+            </dl>
+          </li>
+        ))}
       </ul>
     </>
   );
