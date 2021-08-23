@@ -1,4 +1,6 @@
-function App() {
+import { ReactElement } from 'react';
+
+function App(): ReactElement {
   return (
     <>
       <header role="banner">
