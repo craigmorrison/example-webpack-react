@@ -8,26 +8,26 @@ import {
   contentInfoLink,
   siteWrapper,
   siteMain
-} from './app.css';
+} from './app.styles';
 
 const queryClient = new QueryClient();
 
 function App(): ReactElement {
   return (
-    <div className={siteWrapper}>
-      <header role="banner" className={banner}>
-        <h1 className={bannerTitle}>Star Wars</h1>
+    <div css={siteWrapper}>
+      <header role="banner" css={banner}>
+        <h1 css={bannerTitle}>Star Wars</h1>
       </header>
 
-      <main className={siteMain}>
+      <main css={siteMain}>
         <QueryClientProvider client={queryClient}>
           <PokemonListView />
         </QueryClientProvider>
       </main>
 
-      <footer role="contentinfo" className={contentInfo}>
+      <footer role="contentinfo" css={contentInfo}>
         Data provided by{' '}
-        <a href="https://swapi.dev" className={contentInfoLink}>
+        <a href="https://swapi.dev" css={contentInfoLink}>
           swapi.dev
         </a>
       </footer>

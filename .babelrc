@@ -4,10 +4,8 @@
     "@babel/preset-typescript",
     [
       "@babel/preset-react",
-      {
-        "runtime": "automatic"
-      }
+      { "runtime": "automatic", "importSource": "@emotion/react" }
     ]
   ],
-  "plugins": ["@vanilla-extract/babel-plugin"]
+  "plugins": ["@emotion/babel-plugin"]
 }

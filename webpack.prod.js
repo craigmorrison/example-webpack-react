@@ -8,7 +8,7 @@ module.exports = {
   mode: 'production',
   entry: path.resolve(__dirname, './src/index.tsx'),
   output: {
-    path: path.resolve(__dirname, './public'),
+    path: path.resolve(__dirname, './dist'),
     filename: '[name]-[contenthash].js'
   },
   devtool: 'source-map',

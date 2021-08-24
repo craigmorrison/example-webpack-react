@@ -9,8 +9,10 @@ import {
   definitionList,
   defintionListItem,
   defintionListKey,
-  defintionListValue
-} from './people-list.css';
+  defintionListValue,
+  loadingIndicator
+} from './people-list.styles';
+import { ScaleLoader } from 'react-spinners';
 
 type swPerson = {
   name: string;
@@ -45,7 +47,11 @@ function PeopleList(): ReactElement {
   );
 
   if (isLoading) {
-    return <>{'Loading...'}</>;
+    return (
+      <div css={loadingIndicator}>
+        <ScaleLoader height="120" width="16" margin="8" radius="12" />
+      </div>
+    );
   }
 
   if (error) {
@@ -54,31 +60,31 @@ function PeopleList(): ReactElement {
 
   return (
     <>
-      <h2 className={sectionHeading}>People</h2>
-      <ul className={peopleList}>
+      <h2 css={sectionHeading}>People</h2>
+      <ul css={peopleList}>
         {data?.results.map((person) => (
-          <li key={person.name} className={peopleItem}>
-            <h3 className={peopleHeading}>{person.name}</h3>
-            <dl className={definitionList}>
-              <div className={defintionListItem}>
-                <dt className={defintionListKey}>Height:</dt>
-                <dl className={defintionListValue}>{person.height}</dl>
+          <li key={person.name} css={peopleItem}>
+            <h3 css={peopleHeading}>{person.name}</h3>
+            <dl css={definitionList}>
+              <div css={defintionListItem}>
+                <dt css={defintionListKey}>Height:</dt>
+                <dl css={defintionListValue}>{person.height}</dl>
               </div>
-              <div className={defintionListItem}>
-                <dt className={defintionListKey}>Mass:</dt>
-                <dl className={defintionListValue}>{person.mass}</dl>
+              <div css={defintionListItem}>
+                <dt css={defintionListKey}>Mass:</dt>
+                <dl css={defintionListValue}>{person.mass}</dl>
               </div>
-              <div className={defintionListItem}>
-                <dt className={defintionListKey}>Hair color:</dt>
-                <dl className={defintionListValue}>{person.hair_color}</dl>
+              <div css={defintionListItem}>
+                <dt css={defintionListKey}>Hair color:</dt>
+                <dl css={defintionListValue}>{person.hair_color}</dl>
               </div>
-              <div className={defintionListItem}>
-                <dt className={defintionListKey}>Eye color:</dt>
-                <dl className={defintionListValue}>{person.eye_color}</dl>
+              <div css={defintionListItem}>
+                <dt css={defintionListKey}>Eye color:</dt>
+                <dl css={defintionListValue}>{person.eye_color}</dl>
               </div>
-              <div className={defintionListItem}>
-                <dt className={defintionListKey}>Skin color:</dt>
-                <dl className={defintionListValue}>{person.skin_color}</dl>
+              <div css={defintionListItem}>
+                <dt css={defintionListKey}>Skin color:</dt>
+                <dl css={defintionListValue}>{person.skin_color}</dl>
               </div>
             </dl>
           </li>
