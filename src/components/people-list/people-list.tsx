@@ -12,6 +12,7 @@ import {
   defintionListValue,
   loadingIndicator
 } from './people-list.styles';
+// import ScaleLoader from 'react-spinners/ScaleLoader';
 import { ScaleLoader } from 'react-spinners';
 
 type swPerson = {
