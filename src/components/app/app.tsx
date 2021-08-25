@@ -1,6 +1,6 @@
 import { ReactElement } from 'react';
 import { QueryClient, QueryClientProvider } from 'react-query';
-import PokemonListView from '../people-list';
+import PeopleList from '../people-list';
 import {
   banner,
   bannerTitle,
@@ -21,7 +21,7 @@ function App(): ReactElement {
 
       <main css={siteMain}>
         <QueryClientProvider client={queryClient}>
-          <PokemonListView />
+          <PeopleList />
         </QueryClientProvider>
       </main>
 
